@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 38 35% 95%;
+    --foreground: 240 20% 12%;
+
+    --card: 40 25% 98%;
+    --card-foreground: 240 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 12%;
+
+    --primary: 265 55% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 15% 92%;
+    --secondary-foreground: 240 20% 20%;
+
+    --muted: 240 10% 93%;
+    --muted-foreground: 240 8% 45%;
+
+    --accent: 38 90% 50%;
+    --accent-foreground: 240 20% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 88%;
+    --input: 240 10% 88%;
+    --ring: 265 55% 50%;
+
+    --radius: 0.75rem;
+
+    --cosmic-purple: 265 55% 50%;
+    --cosmic-blue: 220 65% 50%;
+    --cosmic-indigo: 245 50% 45%;
+    --cosmic-gold: 38 90% 50%;
+    --cosmic-pink: 320 60% 50%;
+    --cosmic-dark: 240 20% 10%;
+    --cosmic-card: 40 25% 98%;
+    --cosmic-glow: 265 70% 60%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 265 55% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 265 55% 50%;
+  }
+
+  .dark {
+    --background: 240 20% 8%;
+    --foreground: 40 20% 92%;
+
+    --card: 240 18% 12%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 240 18% 10%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 265 60% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 15% 18%;
+    --secondary-foreground: 40 15% 85%;
+
+    --muted: 240 12% 16%;
+    --muted-foreground: 240 8% 55%;
+
+    --accent: 38 90% 55%;
+    --accent-foreground: 240 20% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 12% 20%;
+    --input: 240 12% 20%;
+    --ring: 265 60% 60%;
+
+    --cosmic-purple: 265 60% 60%;
+    --cosmic-blue: 220 70% 55%;
+    --cosmic-indigo: 245 55% 50%;
+    --cosmic-gold: 38 90% 55%;
+    --cosmic-pink: 320 65% 55%;
+    --cosmic-dark: 240 20% 5%;
+    --cosmic-card: 240 18% 12%;
+    --cosmic-glow: 265 75% 65%;
+
+    --sidebar-background: 240 18% 10%;
+    --sidebar-foreground: 40 15% 85%;
+    --sidebar-primary: 265 60% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 12% 16%;
+    --sidebar-accent-foreground: 40 15% 90%;
+    --sidebar-border: 240 12% 20%;
+    --sidebar-ring: 265 60% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-gradient-cosmic {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--cosmic-purple)), hsl(var(--cosmic-blue)), hsl(var(--cosmic-pink)));
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--cosmic-gold)), hsl(38 80% 60%));
+  }
+
+  .bg-cosmic-gradient {
+    background: linear-gradient(135deg, hsl(var(--background)), hsl(38 30% 93%), hsl(35 25% 94%));
+  }
+
+  .bg-cosmic-card {
+    background: hsl(var(--card));
+    box-shadow: 0 1px 3px hsl(240 10% 80% / 0.3), 0 4px 16px hsl(240 10% 80% / 0.1);
+  }
+
+  .dark .bg-cosmic-card {
+    box-shadow: 0 1px 3px hsl(240 20% 5% / 0.5), 0 4px 16px hsl(265 60% 30% / 0.1);
+  }
+
+  .glow-purple {
+    box-shadow: 0 4px 20px hsl(var(--cosmic-purple) / 0.25), 0 8px 40px hsl(var(--cosmic-purple) / 0.1);
+  }
+
+  .glow-gold {
+    box-shadow: 0 4px 20px hsl(var(--cosmic-gold) / 0.25), 0 8px 40px hsl(var(--cosmic-gold) / 0.1);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--cosmic-purple) / 0.3);
+  }
+
+  .cosmic-border {
+    border: 1px solid hsl(var(--border));
+  }
+
+  .cosmic-border-gold {
+    border: 1px solid hsl(var(--cosmic-gold) / 0.4);
+  }
+
+  .star-field {
+    background-image: 
+      radial-gradient(2px 2px at 20% 30%, hsl(var(--cosmic-purple) / 0.15), transparent),
+      radial-gradient(2px 2px at 40% 70%, hsl(var(--cosmic-blue) / 0.1), transparent),
+      radial-gradient(1px 1px at 60% 20%, hsl(var(--cosmic-gold) / 0.2), transparent),
+      radial-gradient(1px 1px at 80% 50%, hsl(var(--cosmic-purple) / 0.1), transparent),
+      radial-gradient(1px 1px at 10% 80%, hsl(var(--cosmic-blue) / 0.15), transparent),
+      radial-gradient(1px 1px at 70% 90%, hsl(var(--cosmic-pink) / 0.08), transparent),
+      radial-gradient(1px 1px at 30% 50%, hsl(var(--cosmic-gold) / 0.12), transparent),
+      radial-gradient(1px 1px at 90% 10%, hsl(var(--cosmic-purple) / 0.1), transparent);
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  /* Purple gradient marquee strip */
+  .marquee-strip {
+    background: linear-gradient(135deg, hsl(var(--cosmic-purple)), hsl(var(--cosmic-indigo)), hsl(var(--cosmic-purple)));
+    border-top: 1px solid hsl(var(--cosmic-purple) / 0.5);
+  }
+
+  /* Glow effect for images */
+  .image-glow {
+    filter: drop-shadow(0 0 20px hsl(var(--cosmic-purple) / 0.3)) drop-shadow(0 0 60px hsl(var(--cosmic-purple) / 0.15));
+  }
+}
+
+/* Subtle animated stars background */
+.cosmic-bg-stars {
+  position: relative;
+}
+.cosmic-bg-stars::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 10% 15%, hsl(var(--cosmic-purple) / 0.18), transparent),
+    radial-gradient(1px 1px at 25% 45%, hsl(var(--cosmic-gold) / 0.15), transparent),
+    radial-gradient(1.5px 1.5px at 50% 10%, hsl(var(--cosmic-blue) / 0.12), transparent),
+    radial-gradient(1px 1px at 70% 60%, hsl(var(--cosmic-pink) / 0.1), transparent),
+    radial-gradient(1px 1px at 85% 25%, hsl(var(--cosmic-purple) / 0.14), transparent),
+    radial-gradient(1.5px 1.5px at 15% 75%, hsl(var(--cosmic-blue) / 0.12), transparent),
+    radial-gradient(1px 1px at 40% 85%, hsl(var(--cosmic-gold) / 0.1), transparent),
+    radial-gradient(1px 1px at 60% 35%, hsl(var(--cosmic-purple) / 0.08), transparent),
+    radial-gradient(1.5px 1.5px at 90% 80%, hsl(var(--cosmic-pink) / 0.12), transparent),
+    radial-gradient(1px 1px at 5% 55%, hsl(var(--cosmic-blue) / 0.1), transparent),
+    radial-gradient(1px 1px at 75% 90%, hsl(var(--cosmic-gold) / 0.08), transparent),
+    radial-gradient(1.5px 1.5px at 35% 20%, hsl(var(--cosmic-purple) / 0.1), transparent);
+}
+.cosmic-bg-stars::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 30%, hsl(var(--cosmic-purple) / 0.04), transparent),
+    radial-gradient(ellipse 500px 300px at 80% 70%, hsl(var(--cosmic-blue) / 0.03), transparent),
+    radial-gradient(ellipse 400px 400px at 50% 50%, hsl(var(--cosmic-gold) / 0.02), transparent);
+}
+
+/* Loading screen animations */
+@keyframes loader-orbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes loader-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+@keyframes loader-fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.story-link * {
+  @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+}
+
+
+/* ...existing code... */
+
+.mask-fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
+}
+
+/* ...existing code... */
+
+/* 🌌 Galaxy Gradient */
+.galaxy-bg {
+  background:
+    radial-gradient(circle at 30% 40%, #1e1b4b, transparent 60%),
+    radial-gradient(circle at 70% 60%, #312e81, transparent 60%),
+    #050510;
+  animation: galaxyMove 20s linear infinite alternate;
+}
+
+@keyframes galaxyMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* ✨ Subtle Stars */
+.star-overlay {
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.04;
+}
+
+/* 🪐 Slow Spin */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 60s linear infinite;
+}
