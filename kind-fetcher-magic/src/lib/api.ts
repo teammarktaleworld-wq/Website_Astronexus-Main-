@@ -1,4 +1,4 @@
-const BASE_URL = "https://astro-nexus-new-6.onrender.com";
+const BASE_URL = "https://astronexus-backend.onrender.com";
 const USER_URL = `${BASE_URL}/user`;
 
 const getToken = () => localStorage.getItem("auth_token");
