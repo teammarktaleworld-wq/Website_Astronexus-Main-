@@ -36,7 +36,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#home" className="flex items-center">
-          <img src={logoImg} alt="AstroNexus" className="h-10 w-auto" />
+          <img src={logoImg} alt="AstroNexus" className="h-12 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
